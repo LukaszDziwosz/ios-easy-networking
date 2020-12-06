@@ -63,9 +63,9 @@ private func getTodos() -> AnyPublisher<[Todo], Error> {
 
 ```swift
 getTodos()
-    .sink { [weak self] completion in
+    .sink { completion in
         // Handle completion
-    } receiveValue: { [weak self] todos in
+    } receiveValue: { todos in
         // Handle received values
     }
     .store(in: &cancellables)
@@ -73,9 +73,9 @@ getTodos()
 
 ```swift
 updateTodo(todo: updatedTodo)
-    .sink { [weak self] completion in
+    .sink { completion in
         // Handle completion
-    } receiveValue: { [weak self] result in
+    } receiveValue: { result in
         // Handle received values
     }
     .store(in: &cancellables)
