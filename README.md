@@ -1,6 +1,6 @@
 # EasyNetworking
 
-This is a simple wrapper around `URLSession` to make its usage more leightweight. All awesome features (for example thread-safety) are therefore included.
+This is a simple wrapper around `URLSession` to make its usage more lightweight. All awesome features (for example thread-safety) are therefore included.
 
 ## Features
 
@@ -42,7 +42,7 @@ class ContentViewModel: ObservableObject {
 2. Prepare your `API` requests with flexible `RequestConfiguration`-s.
 
 ```swift
-fileprivate func updateTodo(todo: Todo) -> AnyPublisher<TodoUpdateResult, Error> {
+private func updateTodo(todo: Todo) -> AnyPublisher<TodoUpdateResult, Error> {
     do {
         let configuration = RequestConfiguration(endpointPath: "/todos/\(todo.id)",
                                                   method: .put,
@@ -53,7 +53,7 @@ fileprivate func updateTodo(todo: Todo) -> AnyPublisher<TodoUpdateResult, Error>
     }
 }
 
-fileprivate func getTodos() -> AnyPublisher<[Todo], Error> {
+private func getTodos() -> AnyPublisher<[Todo], Error> {
     let configuration = RequestConfiguration(endpointPath: "/todos")
     return apiClient.request(configuration: configuration)
 }

@@ -76,7 +76,7 @@ class ContentViewModel: ObservableObject {
 
     // MARK: - API requests
 
-    fileprivate func updateTodo(todo: Todo) -> AnyPublisher<TodoUpdateResult, Error> {
+    private func updateTodo(todo: Todo) -> AnyPublisher<TodoUpdateResult, Error> {
         do {
             let configuration = RequestConfiguration(endpointPath: "/todos/\(todo.id)",
                                                      method: .put,
@@ -87,7 +87,7 @@ class ContentViewModel: ObservableObject {
         }
     }
 
-    fileprivate func getTodos() -> AnyPublisher<[Todo], Error> {
+    private func getTodos() -> AnyPublisher<[Todo], Error> {
         let configuration = RequestConfiguration(endpointPath: "/todos")
         return apiClient.request(configuration: configuration)
     }
