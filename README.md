@@ -18,6 +18,8 @@ Select your main project. On the Swift packages tab, tap on the `+` icon to add 
 
 ## Usage
 
+An example project can be found in the `Example` folder.
+
 1. Create an `APIClient` instance. By default it uses the `URLSession.shared` singleton but you can pass your own instance as well in case you want to go custom. Similarly with the `jsonDecoder` param which defaults to a regular `JSONDecoder` instance.
 
 ```swift
