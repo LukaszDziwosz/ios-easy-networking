@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "EasyNetworking",
+        "repositoryURL": "https://github.com/tamasdancsi/ios-easy-networking",
+        "state": {
+          "branch": null,
+          "revision": "68a8ecc30ea4656b7f50b02925aa05960774a12b",
+          "version": "1.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
