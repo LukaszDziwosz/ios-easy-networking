@@ -29,9 +29,16 @@ public struct RequestConfiguration {
     }
 
     func urlRequest(baseURL: URL) throws -> URLRequest {
-        var request = URLRequest(url: baseURL.appendingPathComponent(endpointPath),
-                   cachePolicy: cachePolicy,
-                   timeoutInterval: timeoutInterval)
+        guard let urlString = baseURL.appendingPathComponent(endpointPath)
+                .absoluteString.removingPercentEncoding,
+              let url = URL(string: urlString) else {
+
+            throw NetworkingError.wrongEndpointPath
+        }
+
+        var request = URLRequest(url: url,
+                                 cachePolicy: cachePolicy,
+                                 timeoutInterval: timeoutInterval)
 
         /// Setting HTTP method
         request.httpMethod = method.rawValue.uppercased()
